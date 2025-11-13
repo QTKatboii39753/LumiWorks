@@ -1,0 +1,53 @@
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+}
+
+/* Light theme glow spheres */
+.glow-blue-light {
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.5) 0%, rgba(96, 165, 250, 0.2) 50%, transparent 70%);
+  filter: blur(40px);
+}
+
+.glow-green-light {
+  background: radial-gradient(circle, rgba(134, 239, 172, 0.5) 0%, rgba(52, 211, 153, 0.2) 50%, transparent 70%);
+  filter: blur(40px);
+}
+
+.glow-yellow-light {
+  background: radial-gradient(circle, rgba(253, 230, 138, 0.5) 0%, rgba(251, 191, 36, 0.2) 50%, transparent 70%);
+  filter: blur(40px);
+}
+
+/* Dark theme glow spheres */
+.glow-blue {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(37, 99, 235, 0.2) 50%, transparent 70%);
+  filter: blur(40px);
+}
+
+.glow-green {
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.5) 0%, rgba(22, 163, 74, 0.2) 50%, transparent 70%);
+  filter: blur(40px);
+}
+
+.glow-yellow {
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.5) 0%, rgba(202, 138, 4, 0.2) 50%, transparent 70%);
+  filter: blur(40px);
+}
+
+/* Glow animation */
+@keyframes glow {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+  transform-origin: center;
+}
