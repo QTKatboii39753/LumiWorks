@@ -25,7 +25,7 @@ const Navbar = ({
             <Link to="/" className="flex-shrink-0 flex items-center">
               <Zap className={`h-6 w-6 ${isDarkMode ? 'text-yellow-400' : 'text-blue-600'}`} />
               <span className={`ml-2 text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                ProjectBolt
+                Lumiworks
               </span>
             </Link>
           </div>
