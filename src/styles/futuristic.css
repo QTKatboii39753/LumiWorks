@@ -1,0 +1,125 @@
+/* Futuristic Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+}
+
+/* Neon Glow Effect */
+.neon-text {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0fa, 0 0 30px #0fa;
+  animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0fa, 0 0 30px #0fa; }
+  to { text-shadow: 0 0 10px #fff, 0 0 20px #0fa, 0 0 30px #0fa, 0 0 40px #0fa; }
+}
+
+/* Holographic Card */
+.holographic-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.holographic-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  z-index: -1;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  from { transform: translateX(-100%) rotate(45deg); }
+  to { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Grid Pattern Overlay */
+.grid-overlay {
+  position: relative;
+}
+
+.grid-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animated Gradient Border */
+.gradient-border {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00f2fe, #4facfe, #00f2fe);
+  background-size: 200% 200%;
+  z-index: -1;
+  border-radius: 16px;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glass-panel {
+    padding: 1.5rem;
+  }
+  
+  .neon-text {
+    font-size: 2rem;
+  }
+}
