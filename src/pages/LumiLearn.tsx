@@ -1,4 +1,4 @@
-import { ArrowLeft, GraduationCap, BookOpen, Users, Star, Lightbulb, Check, Clock, Award, ChevronRight } from 'lucide-react';
+import { ArrowLeft, BookOpen, Users, Star, Lightbulb, Check, Clock, Award, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import '../styles/futuristic.css';
 
@@ -61,8 +61,8 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
     <div className="min-h-screen relative overflow-hidden">
       <div className="absolute inset-0">
         <div className={`absolute inset-0 transition-colors duration-300 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}></div>
-        <div className={`glow-sphere ${isDarkMode ? 'glow-yellow' : 'glow-yellow-light'} w-96 h-96 top-20 -left-40 animate-glow`}></div>
-        <div className={`glow-sphere ${isDarkMode ? 'glow-yellow' : 'glow-yellow-light'} w-80 h-80 bottom-20 -right-40 animate-glow`} style={{ animationDelay: '2s' }}></div>
+        <div className={`glow-sphere ${isDarkMode ? 'glow-purple' : 'glow-purple-light'} w-96 h-96 top-20 -left-40 animate-glow`}></div>
+        <div className={`glow-sphere ${isDarkMode ? 'glow-purple' : 'glow-purple-light'} w-80 h-80 bottom-20 -right-40 animate-glow`} style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12">
@@ -74,7 +74,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
         >
           <button
             onClick={() => onNavigate('landing')}
-            className={`flex items-center ${isDarkMode ? 'text-yellow-500 hover:text-yellow-400' : 'text-yellow-600 hover:text-yellow-700'} font-semibold transition-colors animate-slide-in-left`}
+            className={`flex items-center ${isDarkMode ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-700'} font-semibold transition-colors animate-slide-in-left`}
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Home
@@ -106,13 +106,17 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="inline-block mb-6"
             >
-              <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-yellow-900/30' : 'bg-yellow-100/50'} backdrop-blur-sm`}>
-                <GraduationCap className={`w-16 h-16 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} strokeWidth={1.5} />
+              <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-purple-900/30' : 'bg-purple-100/50'} backdrop-blur-sm`}>
+                <img
+                  src="/logos/lumilearn-purple.png"
+                  alt="LumiLearn logo"
+                  className="w-24 h-24 md:w-28 md:h-28 object-contain"
+                />
               </div>
             </motion.div>
             
             <motion.h1 
-              className={`text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent ${isDarkMode ? 'bg-gradient-to-r from-yellow-300 to-amber-300' : 'bg-gradient-to-r from-yellow-600 to-amber-600'}`}
+              className={`text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent ${isDarkMode ? 'bg-gradient-to-r from-purple-300 to-violet-300' : 'bg-gradient-to-r from-purple-600 to-violet-700'}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -121,7 +125,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
             </motion.h1>
             
             <motion.p 
-              className={`text-2xl font-medium mb-8 ${isDarkMode ? 'text-yellow-200' : 'text-yellow-700'}`}
+              className={`text-2xl font-medium mb-8 ${isDarkMode ? 'text-purple-200' : 'text-purple-700'}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -138,7 +142,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-medium flex items-center ${isDarkMode ? 'bg-yellow-500 hover:bg-yellow-600 text-white' : 'bg-yellow-600 hover:bg-yellow-700 text-white'}`}
+                className={`px-6 py-3 rounded-full font-medium flex items-center ${isDarkMode ? 'bg-purple-500 hover:bg-purple-600 text-white' : 'bg-purple-600 hover:bg-purple-700 text-white'}`}
               >
                 Book a Session
                 <ChevronRight className="ml-2 w-5 h-5" />
@@ -146,7 +150,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-medium ${isDarkMode ? 'bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-900/30' : 'bg-transparent border-2 border-yellow-600 text-yellow-700 hover:bg-yellow-100'}`}
+                className={`px-6 py-3 rounded-full font-medium ${isDarkMode ? 'bg-transparent border-2 border-purple-400 text-purple-300 hover:bg-purple-900/30' : 'bg-transparent border-2 border-purple-600 text-purple-700 hover:bg-purple-100'}`}
               >
                 Learn More
               </motion.button>
@@ -168,15 +172,15 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
             
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center">
-                <Check className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                <Check className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`} />
                 <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>Personalized learning plans</span>
               </div>
               <div className="flex items-center">
-                <Clock className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                <Clock className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`} />
                 <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>Flexible scheduling</span>
               </div>
               <div className="flex items-center">
-                <Award className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                <Award className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`} />
                 <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>Certified educators</span>
               </div>
             </div>
@@ -198,7 +202,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
                   transition={{ duration: 0.3 }}
                   className={`glass-panel p-6 rounded-2xl h-full flex flex-col ${isDarkMode ? 'bg-gray-800/80' : 'bg-white/90'}`}
                 >
-                  <div className={`p-3 rounded-lg inline-flex ${isDarkMode ? 'bg-yellow-900/30' : 'bg-yellow-100'} mb-4`}>
+                  <div className={`p-3 rounded-lg inline-flex ${isDarkMode ? 'bg-purple-900/30' : 'bg-purple-100'} mb-4`}>
                     {service.icon}
                   </div>
                   <h3 className={`text-xl font-semibold mb-2 flex-grow ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -231,7 +235,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <Check className={`w-5 h-5 mt-1 mr-3 flex-shrink-0 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                    <Check className={`w-5 h-5 mt-1 mr-3 flex-shrink-0 ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`} />
                     <div>
                       <h4 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Personalized Learning Plans</h4>
                       <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Customized to each student's unique needs and goals</p>
@@ -260,12 +264,12 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
                   {serviceHours.map(({ day, hours }, index) => (
                     <div key={index} className="flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-700">
                       <span className={`font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>{day}</span>
-                      <span className={`font-medium ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`}>{hours}</span>
+                      <span className={`font-medium ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`}>{hours}</span>
                     </div>
                   ))}
                 </div>
                 
-                <div className="mt-8 p-4 rounded-lg bg-gradient-to-r from-yellow-500 to-amber-500 text-white">
+                <div className="mt-8 p-4 rounded-lg bg-gradient-to-r from-purple-500 to-violet-500 text-white">
                   <div className="flex items-center">
                     <Lightbulb className="w-5 h-5 mr-2" />
                     <span className="font-semibold">Need help with homework?</span>
@@ -295,8 +299,8 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="glass-panel p-6 rounded-2xl"
                 >
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center text-white font-bold text-xl mr-4">
+                  <div className="flex items-center mb4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-violet-500 flex items-center justify-center text-white font-bold text-xl mr-4">
                       {testimonial.name.charAt(0)}
                     </div>
                     <div>
@@ -322,7 +326,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
             viewport={{ once: true }}
             className="text-center py-16 px-6 rounded-3xl overflow-hidden relative mb-16"
           >
-            <div className={`absolute inset-0 bg-gradient-to-r ${isDarkMode ? 'from-yellow-600/20 to-amber-600/20' : 'from-yellow-500/20 to-amber-500/20'} rounded-3xl`}></div>
+            <div className={`absolute inset-0 bg-gradient-to-r ${isDarkMode ? 'from-purple-700/20 to-violet-700/20' : 'from-purple-500/20 to-violet-500/20'} rounded-3xl`}></div>
             <div className="relative z-10">
               <h2 className={`text-4xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Ready to Unlock Your Child's Potential?</h2>
               <p className={`text-xl mb-8 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -331,7 +335,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-8 py-4 rounded-full font-semibold text-lg ${isDarkMode ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-yellow-600 text-white hover:bg-yellow-700'}`}
+                className={`px-8 py-4 rounded-full font-semibold text-lg ${isDarkMode ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-purple-600 text-white hover:bg-purple-700'}`}
               >
                 Book a Free Assessment
               </motion.button>

@@ -1,7 +1,7 @@
-import { Code, Droplets, GraduationCap, Sparkles, Zap, Star, ArrowRight, Moon, Sun } from 'lucide-react';
+import { Droplets, Sparkles, Zap, Star, Moon, Sun } from 'lucide-react';
 import { LightBulb } from '../components/LightBulb';
 import { Particles } from '../components/Particles';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/animations.css';
 
@@ -23,7 +23,11 @@ const Navbar = ({
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <Zap className={`h-6 w-6 ${isDarkMode ? 'text-yellow-400' : 'text-blue-600'}`} />
+              <img
+                src="/logos/lumiworks-yellow.png"
+                alt="LumiWorks logo"
+                className="h-8 w-8 object-contain"
+              />
               <span className={`ml-2 text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                 Lumiworks
               </span>
@@ -58,7 +62,7 @@ const Navbar = ({
             </button>
             <button
               onClick={() => onNavigate('tech')}
-              className={`ml-4 px-4 py-2 rounded-md text-sm font-medium ${isDarkMode ? 'bg-yellow-500 text-gray-900 hover:bg-yellow-400' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+              className={`ml-4 px-4 py-2 rounded-md text-sm font-medium ${isDarkMode ? 'bg-yellow-500 text-gray-900 hover:bg-yellow-400' : 'bg-yellow-500 text-gray-900 hover:bg-yellow-400'}`}
             >
               Get Started
             </button>
@@ -88,17 +92,12 @@ interface LandingPageProps {
 
 function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps) {
   const [isHovering, setIsHovering] = useState<string | null>(null);
-  const [showConfetti, setShowConfetti] = useState(false);
   const [isBulbOn, setIsBulbOn] = useState(false);
   const [showSpark, setShowSpark] = useState(false);
   
 
   const handleButtonClick = (page: string) => {
-    setShowConfetti(true);
-    setTimeout(() => {
-      setShowConfetti(false);
-      onNavigate(page as any);
-    }, 800);
+    onNavigate(page as any);
   };
 
   const triggerSpark = () => {
@@ -111,47 +110,6 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
     triggerSpark();
     onToggleTheme(); // Toggle theme when light bulb is clicked
   };
-
-  // Confetti effect
-  useEffect(() => {
-    if (!showConfetti) return;
-
-    const colors = ['#fbbf24', '#60a5fa', '#34d399', '#f472b6', '#a78bfa'];
-    
-    const createConfetti = () => {
-      const confetti = document.createElement('div');
-      confetti.style.position = 'fixed';
-      confetti.style.width = '10px';
-      confetti.style.height = '10px';
-      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      confetti.style.borderRadius = '50%';
-      confetti.style.left = Math.random() * window.innerWidth + 'px';
-      confetti.style.top = '-10px';
-      confetti.style.zIndex = '9999';
-      confetti.style.pointerEvents = 'none';
-      
-      document.body.appendChild(confetti);
-      
-      const animation = confetti.animate(
-        [
-          { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
-          { 
-            transform: `translate(${Math.random() * 400 - 200}px, ${window.innerHeight}px) rotate(${Math.random() * 360}deg)`,
-            opacity: 0 
-          }
-        ],
-        {
-          duration: 1000 + Math.random() * 2000,
-          easing: 'cubic-bezier(0.1, 0.8, 0.9, 1)',
-        }
-      );
-      
-      animation.onfinish = () => confetti.remove();
-    };
-
-    const interval = setInterval(createConfetti, 50);
-    return () => clearInterval(interval);
-  }, [showConfetti]);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -266,11 +224,14 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                 </div>
               )}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-3xl hover:bg-white/20 border border-white/20 h-full flex flex-col">
-                <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <Code className="w-12 h-12 mb-4 relative z-10" />
-                  <h2 className="text-3xl font-bold mb-2 relative z-10">LumiTech</h2>
-                  <p className="text-blue-200/90 mb-6">Technology Solutions</p>
+                <div className="bg-gradient-to-br from-slate-600 to-gray-800 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(148,163,184,0.5)] transition-all duration-500 flex flex-col items-center text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-300/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <img
+                    src="/logos/lumitech-silver.png"
+                    alt="LumiTech logo"
+                    className="w-28 h-28 md:w-32 md:h-32 mb-4 object-contain relative z-10"
+                  />
+                  <p className="text-slate-200/90 mb-6 relative z-10">Technology Solutions</p>
                 </div>
                 <div className="p-6 bg-gray-800/50 backdrop-blur-sm flex-grow flex flex-col">
                   <div className={`mb-6 leading-relaxed flex-grow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -278,10 +239,14 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                   </div>
                   <button
                     onClick={() => handleButtonClick('tech')}
-                    className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group/button"
+                    className="w-full bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center group/button"
+                    aria-label="Go to LumiTech page"
                   >
-                    <span>Explore LumiTech</span>
-                    <ArrowRight className="w-4 h-4 transform group-hover/button:translate-x-1 transition-transform" />
+                    <img
+                      src="/logos/lumitech-silver.png"
+                      alt="LumiTech logo"
+                      className="w-24 h-24 md:w-28 md:h-28 object-contain"
+                    />
                   </button>
                 </div>
               </div>
@@ -293,16 +258,19 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
               onMouseLeave={() => setIsHovering(null)}
             >
               {isHovering === 'clean' && (
-                <div className="absolute -top-3 -right-3 bg-green-500 text-white p-2 rounded-full transform -rotate-12 animate-bounce">
+                <div className="absolute -top-3 -right-3 bg-blue-500 text-white p-2 rounded-full transform -rotate-12 animate-bounce">
                   <Droplets className="w-5 h-5" />
                 </div>
               )}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-3xl hover:bg-white/20 border border-white/20 h-full flex flex-col">
-                <div className="bg-gradient-to-br from-green-600 to-green-700 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(22,163,74,0.5)] transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <Droplets className="w-12 h-12 mb-4 relative z-10" />
-                  <h2 className="text-3xl font-bold mb-2 relative z-10">LumiClean</h2>
-                  <p className="text-green-200/90 mb-6">Window Washing Services</p>
+                <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-500 flex flex-col items-center text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <img
+                    src="/logos/lumiclean-blue.png"
+                    alt="LumiClean logo"
+                    className="w-28 h-28 md:w-32 md:h-32 mb-4 object-contain relative z-10"
+                  />
+                  <p className="text-blue-200/90 mb-6 relative z-10">Make your home gleam</p>
                 </div>
                 <div className="p-6 bg-gray-800/50 backdrop-blur-sm flex-grow flex flex-col">
                   <div className={`mb-6 leading-relaxed flex-grow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -310,10 +278,14 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                   </div>
                   <button
                     onClick={() => handleButtonClick('clean')}
-                    className="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group/button"
+                    className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center group/button"
+                    aria-label="Go to LumiClean page"
                   >
-                    <span>Explore LumiClean</span>
-                    <ArrowRight className="w-4 h-4 transform group-hover/button:translate-x-1 transition-transform" />
+                    <img
+                      src="/logos/lumiclean-blue.png"
+                      alt="LumiClean logo"
+                      className="w-24 h-24 md:w-28 md:h-28 object-contain"
+                    />
                   </button>
                 </div>
               </div>
@@ -325,16 +297,19 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
               onMouseLeave={() => setIsHovering(null)}
             >
               {isHovering === 'learn' && (
-                <div className="absolute -top-3 -right-3 bg-yellow-500 text-white p-2 rounded-full animate-pulse">
+                <div className="absolute -top-3 -right-3 bg-purple-500 text-white p-2 rounded-full animate-pulse">
                   <Star className="w-5 h-5" />
                 </div>
               )}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-3xl hover:bg-white/20 border border-white/20 h-full flex flex-col">
-                <div className="bg-gradient-to-br from-yellow-600 to-yellow-700 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(234,179,8,0.5)] transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <GraduationCap className="w-12 h-12 mb-4 relative z-10" />
-                  <h2 className="text-3xl font-bold mb-2 relative z-10">LumiLearn</h2>
-                  <p className="text-yellow-200/90">Comprehensive computer tutorials</p>
+                <div className="bg-gradient-to-br from-purple-400 to-violet-500 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-500 flex flex-col items-center text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-200/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <img
+                    src="/logos/lumilearn-purple.png"
+                    alt="LumiLearn logo"
+                    className="w-28 h-28 md:w-32 md:h-32 mb-4 object-contain relative z-10"
+                  />
+                  <p className="text-purple-200/90 mb-6 relative z-10">One step at a time</p>
                 </div>
                 <div className="p-6 bg-gray-800/50 backdrop-blur-sm flex-grow flex flex-col">
                   <div className={`mb-6 leading-relaxed flex-grow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -343,10 +318,14 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                   <div className="mt-auto">
                     <button
                       onClick={() => handleButtonClick('learn')}
-                      className="w-full bg-yellow-600 hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group/button"
+                      className="w-full bg-purple-600 hover:bg-purple-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center group/button"
+                      aria-label="Go to LumiLearn page"
                     >
-                      <span>Explore LumiLearn</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover/button:translate-x-1 transition-transform" />
+                      <img
+                        src="/logos/lumilearn-purple.png"
+                        alt="LumiLearn logo"
+                        className="w-24 h-24 md:w-28 md:h-28 object-contain"
+                      />
                     </button>
                   </div>
                 </div>

@@ -42,12 +42,12 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
   ];
 
   return (
-    <div className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-green-50 to-blue-50'}`}>
+    <div className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-blue-50 to-blue-100'}`}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className={`absolute w-96 h-96 rounded-full filter blur-3xl opacity-20 ${isDarkMode ? 'bg-green-500' : 'bg-green-300'}`} style={{ top: '10%', left: '10%' }}></div>
-          <div className={`absolute w-80 h-80 rounded-full filter blur-3xl opacity-20 ${isDarkMode ? 'bg-blue-500' : 'bg-blue-300'}`} style={{ bottom: '10%', right: '10%' }}></div>
+          <div className={`absolute w-96 h-96 rounded-full filter blur-3xl opacity-20 ${isDarkMode ? 'bg-blue-500' : 'bg-blue-300'}`} style={{ top: '10%', left: '10%' }}></div>
+          <div className={`absolute w-80 h-80 rounded-full filter blur-3xl opacity-20 ${isDarkMode ? 'bg-sky-500' : 'bg-sky-300'}`} style={{ bottom: '10%', right: '10%' }}></div>
         </div>
         <div className="absolute inset-0 grid-overlay"></div>
       </div>
@@ -63,7 +63,7 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
           <motion.button
             whileHover={{ x: -5 }}
             onClick={() => onNavigate('landing')}
-            className={`flex items-center font-medium ${isDarkMode ? 'text-green-300 hover:text-white' : 'text-green-600 hover:text-green-800'} transition-colors`}
+            className={`flex items-center font-medium ${isDarkMode ? 'text-blue-300 hover:text-white' : 'text-blue-600 hover:text-blue-800'} transition-colors`}
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Home
@@ -97,13 +97,17 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="inline-block mb-6"
           >
-            <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100/50'} backdrop-blur-sm`}>
-              <Droplets className={`w-12 h-12 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} strokeWidth={1.5} />
+            <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-blue-900/30' : 'bg-blue-100/50'} backdrop-blur-sm`}>
+              <img
+                src="/logos/lumiclean-blue.png"
+                alt="LumiClean logo"
+                className="w-24 h-24 md:w-28 md:h-28 object-contain"
+              />
             </div>
           </motion.div>
           
           <motion.h1 
-            className={`text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent ${isDarkMode ? 'bg-gradient-to-r from-green-300 to-blue-300' : 'bg-gradient-to-r from-green-600 to-blue-600'}`}
+            className={`text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent ${isDarkMode ? 'bg-gradient-to-r from-blue-300 to-cyan-300' : 'bg-gradient-to-r from-blue-600 to-cyan-600'}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -112,7 +116,7 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
           </motion.h1>
           
           <motion.p 
-            className={`text-2xl font-medium mb-8 ${isDarkMode ? 'text-green-200' : 'text-green-700'}`}
+            className={`text-2xl font-medium mb-8 ${isDarkMode ? 'text-blue-200' : 'text-blue-700'}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -129,7 +133,7 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-full font-medium flex items-center ${isDarkMode ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+              className={`px-6 py-3 rounded-full font-medium flex items-center ${isDarkMode ? 'bg-blue-500 hover:bg-blue-600 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
             >
               Get Free Quote
               <ArrowLeft className="ml-2 w-5 h-5" />
@@ -137,7 +141,7 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-full font-medium ${isDarkMode ? 'bg-transparent border-2 border-green-400 text-green-300 hover:bg-green-900/30' : 'bg-transparent border-2 border-green-600 text-green-700 hover:bg-green-100'}`}
+              className={`px-6 py-3 rounded-full font-medium ${isDarkMode ? 'bg-transparent border-2 border-blue-400 text-blue-300 hover:bg-blue-900/30' : 'bg-transparent border-2 border-blue-600 text-blue-700 hover:bg-blue-100'}`}
             >
               Learn More
             </motion.button>
@@ -163,21 +167,21 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <Check className={`w-5 h-5 mt-1 mr-3 flex-shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                  <Check className={`w-5 h-5 mt-1 mr-3 flex-shrink-0 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
                   <div>
                     <h4 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Eco-Friendly Solutions</h4>
                     <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Using environmentally safe cleaning products</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Check className={`w-5 h-5 mt-1 mr-3 flex-shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                  <Check className={`w-5 h-5 mt-1 mr-3 flex-shrink-0 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
                   <div>
                     <h4 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Trained Professionals</h4>
                     <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Certified and experienced window cleaning experts</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Check className={`w-5 h-5 mt-1 mr-3 flex-shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                  <Check className={`w-5 h-5 mt-1 mr-3 flex-shrink-0 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
                   <div>
                     <h4 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Satisfaction Guaranteed</h4>
                     <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>100% satisfaction or we'll re-clean for free</p>
@@ -192,12 +196,12 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
                 {serviceHours.map(({ day, hours }, index) => (
                   <div key={index} className="flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-700">
                     <span className={`font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>{day}</span>
-                    <span className={`font-medium ${isDarkMode ? 'text-green-400' : 'text-green-600'}`}>{hours}</span>
+                    <span className={`font-medium ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>{hours}</span>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-8 p-4 rounded-lg bg-gradient-to-r from-green-500 to-blue-500 text-white">
+              <div className="mt-8 p-4 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 mr-2" />
                   <span className="font-semibold">Need service now?</span>
@@ -223,7 +227,7 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
                 transition={{ duration: 0.3 }}
                 className={`glass-panel p-6 rounded-2xl h-full flex flex-col ${isDarkMode ? 'bg-gray-800/80' : 'bg-white/90'}`}
               >
-                <div className={`p-3 rounded-lg inline-flex ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'} mb-4`}>
+                <div className={`p-3 rounded-lg inline-flex ${isDarkMode ? 'bg-blue-900/30' : 'bg-blue-100'} mb-4`}>
                   {service.icon}
                 </div>
                 <h3 className={`text-xl font-semibold mb-2 flex-grow ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -257,12 +261,12 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
                 className="glass-panel p-6 rounded-2xl"
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl mr-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center text-white font-bold text-xl mr-4">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
                     <h4 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{testimonial.name}</h4>
-                    <p className={`text-xl ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>Crystal Clear Window Washing Services</p>
+                    <p className={`text-xl ${isDarkMode ? 'text-blue-300' : 'text-blue-700'}`}>Crystal Clear Window Washing Services</p>
                   </div>
                 </div>
                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>"{testimonial.content}"</p>
@@ -283,7 +287,7 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
           viewport={{ once: true }}
           className="text-center py-16 px-6 rounded-3xl overflow-hidden relative mb-16"
         >
-          <div className={`absolute inset-0 bg-gradient-to-r ${isDarkMode ? 'from-green-600/20 to-blue-600/20' : 'from-green-500/20 to-blue-500/20'} rounded-3xl`}></div>
+          <div className={`absolute inset-0 bg-gradient-to-r ${isDarkMode ? 'from-blue-600/20 to-cyan-600/20' : 'from-blue-500/20 to-cyan-500/20'} rounded-3xl`}></div>
           <div className="relative z-10">
             <h2 className={`text-4xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Ready for Crystal Clear Windows?</h2>
             <p className={`text-xl mb-8 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -292,7 +296,7 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-8 py-4 rounded-full font-semibold text-lg ${isDarkMode ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-green-600 text-white hover:bg-green-700'}`}
+              className={`px-8 py-4 rounded-full font-semibold text-lg ${isDarkMode ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
             >
               Get Your Free Quote Now
             </motion.button>

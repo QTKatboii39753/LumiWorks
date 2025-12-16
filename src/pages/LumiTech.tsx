@@ -59,9 +59,9 @@ function LumiTech({ onNavigate, onToggleTheme, isDarkMode }: LumiTechProps) {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className={`absolute inset-0 transition-colors duration-300 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}></div>
-        <div className={`glow-sphere ${isDarkMode ? 'glow-blue' : 'glow-blue-light'} w-96 h-96 top-20 -left-40 animate-glow`}></div>
-        <div className={`glow-sphere ${isDarkMode ? 'glow-blue' : 'glow-blue-light'} w-80 h-80 bottom-20 -right-40 animate-glow`} style={{ animationDelay: '2s' }}></div>
+        <div className={`absolute inset-0 transition-colors duration-300 ${isDarkMode ? 'bg-gray-950' : 'bg-gray-50'}`}></div>
+        <div className={`glow-sphere ${isDarkMode ? 'glow-silver' : 'glow-silver-light'} w-96 h-96 top-20 -left-40 animate-glow`}></div>
+        <div className={`glow-sphere ${isDarkMode ? 'glow-silver' : 'glow-silver-light'} w-80 h-80 bottom-20 -right-40 animate-glow`} style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12">
@@ -73,7 +73,7 @@ function LumiTech({ onNavigate, onToggleTheme, isDarkMode }: LumiTechProps) {
         >
           <button
             onClick={() => onNavigate('landing')}
-            className={`flex items-center ${isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'} font-semibold transition-colors animate-slide-in-left`}
+            className={`flex items-center ${isDarkMode ? 'text-slate-200 hover:text-slate-50' : 'text-slate-700 hover:text-slate-900'} font-semibold transition-colors animate-slide-in-left`}
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Home
@@ -105,13 +105,17 @@ function LumiTech({ onNavigate, onToggleTheme, isDarkMode }: LumiTechProps) {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="inline-block mb-6"
             >
-              <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-blue-900/30' : 'bg-blue-100/50'} backdrop-blur-sm`}>
-                <Code className={`w-16 h-16 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} strokeWidth={1.5} />
+              <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-slate-800/40' : 'bg-slate-200/70'} backdrop-blur-sm`}>
+                <img
+                  src="/logos/lumitech-silver.png"
+                  alt="LumiTech logo"
+                  className="w-24 h-24 md:w-28 md:h-28 object-contain"
+                />
               </div>
             </motion.div>
             
             <motion.h1 
-              className={`text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent ${isDarkMode ? 'bg-gradient-to-r from-blue-300 to-cyan-300' : 'bg-gradient-to-r from-blue-600 to-cyan-600'}`}
+              className={`text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent ${isDarkMode ? 'bg-gradient-to-r from-slate-100 via-zinc-300 to-slate-200' : 'bg-gradient-to-r from-slate-700 via-zinc-500 to-slate-400'}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -120,7 +124,7 @@ function LumiTech({ onNavigate, onToggleTheme, isDarkMode }: LumiTechProps) {
             </motion.h1>
             
             <motion.p 
-              className={`text-2xl font-medium mb-8 ${isDarkMode ? 'text-blue-200' : 'text-blue-700'}`}
+              className={`text-2xl font-medium mb-8 ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -137,7 +141,7 @@ function LumiTech({ onNavigate, onToggleTheme, isDarkMode }: LumiTechProps) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-medium flex items-center ${isDarkMode ? 'bg-blue-500 hover:bg-blue-600 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                className={`px-6 py-3 rounded-full font-medium flex items-center ${isDarkMode ? 'bg-slate-200 hover:bg-slate-100 text-gray-900' : 'bg-slate-700 hover:bg-slate-800 text-white'}`}
               >
                 Get a Free Quote
                 <ChevronRight className="ml-2 w-5 h-5" />
@@ -145,7 +149,7 @@ function LumiTech({ onNavigate, onToggleTheme, isDarkMode }: LumiTechProps) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-medium ${isDarkMode ? 'bg-transparent border-2 border-blue-400 text-blue-300 hover:bg-blue-900/30' : 'bg-transparent border-2 border-blue-600 text-blue-700 hover:bg-blue-100'}`}
+                className={`px-6 py-3 rounded-full font-medium ${isDarkMode ? 'bg-transparent border-2 border-slate-400 text-slate-200 hover:bg-slate-900/40' : 'bg-transparent border-2 border-slate-500 text-slate-700 hover:bg-slate-100'}`}
               >
                 Learn More
               </motion.button>
@@ -166,15 +170,15 @@ function LumiTech({ onNavigate, onToggleTheme, isDarkMode }: LumiTechProps) {
             
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center">
-                <Check className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+                <Check className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`} />
                 <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>Custom solutions</span>
               </div>
               <div className="flex items-center">
-                <Clock className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+                <Clock className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`} />
                 <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>Fast turnaround</span>
               </div>
               <div className="flex items-center">
-                <Server className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+                <Server className={`w-5 h-5 mr-2 ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`} />
                 <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>Reliable hosting</span>
               </div>
             </div>
