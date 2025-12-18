@@ -4,6 +4,10 @@ import { Particles } from '../components/Particles';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/animations.css';
+import lumiworksLogo from '../../logos/lumiworks-yellow.png';
+import lumitechLogo from '../../logos/lumitech-silver.png';
+import lumicleanLogo from '../../logos/lumiclean-blue.png';
+import lumilearnLogo from '../../logos/lumilearn-purple.png';
 
 // Navbar component
 type Page = 'landing' | 'tech' | 'clean' | 'learn';
@@ -24,7 +28,7 @@ const Navbar = ({
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img
-                src="/logos/lumiworks-yellow.png"
+                src={lumiworksLogo}
                 alt="LumiWorks logo"
                 className="h-8 w-8 object-contain"
               />
@@ -227,7 +231,7 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                 <div className="bg-gradient-to-br from-slate-600 to-gray-800 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(148,163,184,0.5)] transition-all duration-500 flex flex-col items-center text-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-300/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <img
-                    src="/logos/lumitech-silver.png"
+                    src={lumitechLogo}
                     alt="LumiTech logo"
                     className="w-28 h-28 md:w-32 md:h-32 mb-4 object-contain relative z-10"
                   />
@@ -243,7 +247,7 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                     aria-label="Go to LumiTech page"
                   >
                     <img
-                      src="/logos/lumitech-silver.png"
+                      src={lumitechLogo}
                       alt="LumiTech logo"
                       className="w-24 h-24 md:w-28 md:h-28 object-contain"
                     />
@@ -266,7 +270,7 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                 <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-500 flex flex-col items-center text-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <img
-                    src="/logos/lumiclean-blue.png"
+                    src={lumicleanLogo}
                     alt="LumiClean logo"
                     className="w-28 h-28 md:w-32 md:h-32 mb-4 object-contain relative z-10"
                   />
@@ -282,7 +286,7 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                     aria-label="Go to LumiClean page"
                   >
                     <img
-                      src="/logos/lumiclean-blue.png"
+                      src={lumicleanLogo}
                       alt="LumiClean logo"
                       className="w-24 h-24 md:w-28 md:h-28 object-contain"
                     />
@@ -305,7 +309,7 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                 <div className="bg-gradient-to-br from-purple-400 to-violet-500 p-8 text-white relative overflow-hidden group-hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-500 flex flex-col items-center text-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-200/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <img
-                    src="/logos/lumilearn-purple.png"
+                    src={lumilearnLogo}
                     alt="LumiLearn logo"
                     className="w-28 h-28 md:w-32 md:h-32 mb-4 object-contain relative z-10"
                   />
@@ -322,7 +326,7 @@ function LandingPage({ onNavigate, onToggleTheme, isDarkMode }: LandingPageProps
                       aria-label="Go to LumiLearn page"
                     >
                       <img
-                        src="/logos/lumilearn-purple.png"
+                        src={lumilearnLogo}
                         alt="LumiLearn logo"
                         className="w-24 h-24 md:w-28 md:h-28 object-contain"
                       />

@@ -1,6 +1,7 @@
 import { ArrowLeft, BookOpen, Users, Star, Lightbulb, Check, Clock, Award, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import '../styles/futuristic.css';
+import lumilearnLogo from '../../logos/lumilearn-purple.png';
 
 interface LumiLearnProps {
   onNavigate: (page: 'landing' | 'tech' | 'clean' | 'learn') => void;
@@ -108,7 +109,7 @@ function LumiLearn({ onNavigate, onToggleTheme, isDarkMode }: LumiLearnProps) {
             >
               <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-purple-900/30' : 'bg-purple-100/50'} backdrop-blur-sm`}>
                 <img
-                  src="/logos/lumilearn-purple.png"
+                  src={lumilearnLogo}
                   alt="LumiLearn logo"
                   className="w-24 h-24 md:w-28 md:h-28 object-contain"
                 />

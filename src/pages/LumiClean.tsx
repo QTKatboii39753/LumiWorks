@@ -1,6 +1,7 @@
 import { ArrowLeft, Droplets, Building2, Sparkles, Shield, Lightbulb, Check, Clock, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import '../styles/futuristic.css';
+import lumicleanLogo from '../../logos/lumiclean-blue.png';
 
 interface LumiCleanProps {
   onNavigate: (page: 'landing' | 'tech' | 'clean' | 'learn') => void;
@@ -99,7 +100,7 @@ function LumiClean({ onNavigate, onToggleTheme, isDarkMode }: LumiCleanProps) {
           >
             <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-blue-900/30' : 'bg-blue-100/50'} backdrop-blur-sm`}>
               <img
-                src="/logos/lumiclean-blue.png"
+                src={lumicleanLogo}
                 alt="LumiClean logo"
                 className="w-24 h-24 md:w-28 md:h-28 object-contain"
               />

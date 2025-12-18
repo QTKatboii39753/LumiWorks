@@ -1,6 +1,7 @@
 import { ArrowLeft, Lightbulb, Code, Laptop, Smartphone, Check, Clock, Server, BookOpen, ChevronRight, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import '../styles/futuristic.css';
+import lumitechLogo from '../../logos/lumitech-silver.png';
 
 interface LumiTechProps {
   onNavigate: (page: 'landing' | 'tech' | 'clean' | 'learn') => void;
@@ -107,7 +108,7 @@ function LumiTech({ onNavigate, onToggleTheme, isDarkMode }: LumiTechProps) {
             >
               <div className={`p-3 inline-flex items-center justify-center rounded-2xl ${isDarkMode ? 'bg-slate-800/40' : 'bg-slate-200/70'} backdrop-blur-sm`}>
                 <img
-                  src="/logos/lumitech-silver.png"
+                  src={lumitechLogo}
                   alt="LumiTech logo"
                   className="w-24 h-24 md:w-28 md:h-28 object-contain"
                 />
