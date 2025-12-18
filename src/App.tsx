@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import LumiTech from './pages/LumiTech';
 import LumiClean from './pages/LumiClean';
 import LumiLearn from './pages/LumiLearn';
+
+const ScrollToTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return null;
+};
 
 // Wrapper component to handle the theme and navigation
 const AppContent = () => {
@@ -96,6 +106,7 @@ const AppContent = () => {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <AppContent />
     </Router>
   );
